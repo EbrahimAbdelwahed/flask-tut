@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask Tutorial</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Contents</h2>
+            <ol>
+                {% for section in sections %}
+                    <div class="link"><li>
+                        <a href="{{ url_for('section', section_id=section.id) }}"
+                           class="{% if session.get('current_section') == section.id %}active{% endif %}">
+                           {{ section.title }}
+                        </a>
+                    </li></div>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="content">
+            <h1>{{ section.title }}</h1>
+
+            <div class="tutorial-text">
+                {% for item in section.content %}
+                    {% if item is string %}
+                        <p>{{ item }}</p>
+                    {% elif item is iterable and item is not mapping %}
+                        <div class="console">
+                            <p class="code">
+                                {% for line in item %}
+                                    {% for token in line %}
+                                        {% if token is string and token == "" %}
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        {% elif token is string %}
+                                            <span>{{ token }}</span>
+                                        {% else %}
+                                            <span class="{{ token[0] }}">{{ token[1] }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <br/>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    {% else %}
+                        <img src="{{ url_for('static', filename=item['src']) }}"/>
+                    {% endif %}
+                {% endfor %}
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

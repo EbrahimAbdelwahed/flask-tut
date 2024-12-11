@@ -1,0 +1,140 @@
+@keyframes linkAnim {
+	from {background-color: #1e1e2e;}
+	to {background-color: rgba(205, 214, 244, 0.1);}
+ }
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+	font-family: "Poppins", sans-serif;
+	color: #cdd6f4;
+}
+
+body {
+	background-color: #181825;
+}
+
+.container {
+	display: flex;
+}
+
+.navbar {
+	width:  15%;
+	height: 100vh;
+	position: fixed;
+
+	margin-left: 7%;
+	padding-top: calc(4% + 5px);
+}
+
+.content {
+	width: 50%;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+h1, h2 {
+	margin: 25px 0;
+}
+
+h1 {
+	font-size: 55px;
+}
+
+h2 {
+	text-align: center;
+}
+
+li {
+	margin: 20px 25px;
+
+	font-size: 20px;
+}
+
+.link {
+	max-width: 70%;
+	padding: auto 5px;
+	margin: 0 auto;
+}
+
+.link:hover {
+	border-radius: 5px;
+	
+	background-color: rgba(205, 214, 244, 0.1);
+	
+	animation-name: linkAnim;
+  	animation-duration: 0.3s;
+
+	cursor: pointer;
+}
+
+a {
+	font-size: 25px;
+	text-decoration: none;
+}
+
+.content > p {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 30px;
+}
+
+.console {
+	width: 85%;
+	margin: 50px auto;
+	padding: 15px;
+
+	border-radius: 10px;
+	
+	background-color: #11111b;
+
+	font-size: 0;
+}
+
+img {
+	width: 85%;
+	margin: 50px auto;
+
+	border-radius: 10px;
+
+	display: block;
+}
+
+.function {
+	color: #89b4fa;
+}
+
+.parameter {
+	color: #fab387;
+}
+
+.value {
+	color: #f9e2af;
+}
+
+.macro {
+	color: #74c7ec;
+}
+
+.string {
+	color: #a6e3a1;
+}
+
+.keyword {
+	color: #cba6f7;
+}
+
+.at {
+	color: #94e2d5;
+}
+
+.tag {
+	color: #f38ba8;
+}
+
+span {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 16px;
+}
