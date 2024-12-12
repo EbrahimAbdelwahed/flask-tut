@@ -7,7 +7,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	
+
 	font-family: "Poppins", sans-serif;
 	color: #cdd6f4;
 }
@@ -21,13 +21,65 @@ body {
 }
 
 .navbar {
-	width:  15%;
-	height: 100vh;
-	position: fixed;
-
-	margin-left: 7%;
-	padding-top: calc(4% + 5px);
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+    margin-left: 7%;
+    padding-top: calc(4% + 5px);
+    transition: width 0.3s ease, height 0.3s ease; /* Transition for smooth changes */
 }
+
+.navbar h2 {
+    margin-bottom: 10px;
+}
+
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-collapse {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .content {
+        margin-top: 50px; /* Adjust based on your header height */
+    }
+}
+
 
 .content {
 	width: 50%;
@@ -61,9 +113,9 @@ li {
 
 .link:hover {
 	border-radius: 5px;
-	
+
 	background-color: rgba(205, 214, 244, 0.1);
-	
+
 	animation-name: linkAnim;
   	animation-duration: 0.3s;
 
@@ -87,7 +139,7 @@ a {
 	padding: 15px;
 
 	border-radius: 10px;
-	
+
 	background-color: #11111b;
 
 	font-size: 0;
