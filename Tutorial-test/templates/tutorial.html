@@ -16,19 +16,27 @@
 
 <body>
     <div class="container">
-        <div class="navbar">
+        <nav class="navbar">
+            <button class="navbar-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <h2>Contents</h2>
-            <ol>
-                {% for section in sections %}
-                    <div class="link"><li>
-                        <a href="{{ url_for('section', section_id=section.id) }}"
-                           class="{% if session.get('current_section') == section.id %}active{% endif %}">
-                           {{ section.title }}
-                        </a>
-                    </li></div>
-                {% endfor %}
-            </ol>
-        </div>
+            <div class="navbar-collapse">
+                <ol>
+                    {% for section in sections %}
+                        <div class="link"><li>
+                            <a href="{{ url_for('section', section_id=section.id) }}"
+                               class="{% if session.get('current_section') == section.id %}active{% endif %}">
+                               {{ section.title }}
+                            </a>
+                        </li></div>
+                    {% endfor %}
+                </ol>
+            </div>
+        </nav>
+    </div>
 
         <div class="content">
             <h1>{{ section.title }}</h1>
@@ -58,8 +66,16 @@
                         <img src="{{ url_for('static', filename=item['src']) }}"/>
                     {% endif %}
                 {% endfor %}
-            </div>  
+            </div>
         </div>
     </div>
+
+    </div>
+    <script>
+        document.querySelector('.navbar-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar-collapse').classList.toggle('show');
+        });
+    </script>
+
 </body>
 </html>
