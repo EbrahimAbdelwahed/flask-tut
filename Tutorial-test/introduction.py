@@ -126,13 +126,13 @@ console7 = [
 
 console1 = [
 	[_from, "flask ", _import, "Flask"],
-	["", "app = ", func("Flask"), "(__name__, "],
-	["", _at, "app.", func("route"), "(", string("/"), ")"],
-	["", _def, func("hello"), "():"],
+	[ "app = ", func("Flask"), "(__name__, "],
+	[ _at, "app.", func("route"), "(", string("/"), ")"],
+	[ _def, func("hello"), "():"],
 	["", "", _return, string("<h1>Hello, World!</h1>")],
 	[""],
-	["", _if , ("__name__ =="), ("""'__main__':""")],
-    ["", "app.", func("run "), "debug=" , _True ]
+	[ _if , ("__name__ =="), ("""'__main__':""")],
+    	["", "app.", func("run "), "debug=" , _True ]
 ]
 	
 
@@ -164,18 +164,18 @@ content = [
 	text13,
 	[["$ dir /s flask*"]],
 	text14,
-	{ "src": "2.png" },
+	{ "src": "2.PNG" },
 	text15,
-	{ "src": "3.png" },
+	{ "src": "3.PNG" },
 	text16,
 	text17,
-	{ "src": "4.png" },
+	{ "src": "4.PNG" },
 	text18,
-	{ "src": "5.png" },
+	{ "src": "5.PNG" },
 	text19,
-	{ "src": "6.png" },
+	{ "src": "6.PNG" },
 	text20,
-	{ "src": "7.png" }
+	{ "src": "7.PNG" }
 
 ]
 
