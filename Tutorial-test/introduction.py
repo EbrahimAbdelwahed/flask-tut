@@ -53,7 +53,15 @@ text8 = "Creare una Prima Applicazione Flask: Crea un file chiamato app.py (o co
 text9 = "Dal prompt dei comandi (con l'ambiente virtuale attivo), esegui:"
 text10 = """Dovresti vedere un messaggio che indica che il server Flask è in esecuzione. Apri il tuo browser e vai a http://127.0.0.1:5000/ per vedere il messaggio "Hello, World!"."""
 text11 = """Ricorda di disattivare l'ambiente virtuale quando hai finito di lavorare con esso digitando "deactivate" nel prompt dei comandi."""
-
+text12 = "Per evitare di dover utilizzare un ambiente virtuale è necessario aggiungere il percorso del pacchetto flask alla variabile d'ambiente PATH."
+text13 = "Per cercare dove si trova l'eseguibile di flask:"
+text14 = "Copiare il percorso della cartella in cui è contenuto l'eseguibile di flask:"
+text15= "ATTENZIONE: Non copiare il percorso della cartella contenente flask del tuo ambiente virtuale:"
+text16 = """Ora modificheremo la variabile d'ambiente PATH: \n 1. Nelle Impostazioni -> Sistema -> Informazioni \n 2. Nelle Impostazioni correlate -> Impostazioni di sistema avanzate \n"""
+text17 = "3. In Avanzate -> Variabili d'ambiente \n"
+text18 = " 4. Selezionare la variabile Path e modificarla \n "
+text19 = "5. Selezionare nuovo ed incollare il percorso precedentemente copiato."
+text20 = " \n \n Per verificare che flask sia accessibile globalmente sul pc:"
 '''
 console1 = [
 	[_from, "flask ", _import, "Flask"],
@@ -151,9 +159,24 @@ content = [
 	text9,
 	[["$ python app.py"]],
 	text10,
-	text11
+	text11,
+	text12,
+	text13,
+	[["$ dir /s flask*"]],
+	text14,
+	{ "src": "2.png" },
+	text15,
+	{ "src": "3.png" },
+	text16,
+	text17,
+	{ "src": "4.png" },
+	text18,
+	{ "src": "5.png" },
+	text19,
+	{ "src": "6.png" },
+	text20,
+	{ "src": "7.png" }
 
- 
 ]
 
 '''
