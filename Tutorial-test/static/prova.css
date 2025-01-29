@@ -1,0 +1,94 @@
+/* Variabili CSS per colori e dimensioni */
+:root {
+    --main-bg-color: #f4f4f4;
+    --text-color: #333;
+    --primary-color: #007bff;
+    --border-color: #ccc;
+    --font-family: Arial, sans-serif;
+}
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Stili per il contenitore principale */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Intestazioni */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Stili per il codice */
+code {
+    background-color: #e8e8e8;
+    display: block;
+    padding: 10px;
+    border-left: 3px solid var(--primary-color);
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+/* Responsività */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Può essere modificato per schermi più piccoli */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    code {
+        font-size: 0.9em; /* Riduce la dimensione del testo del codice su schermi più piccoli */
+    }
+}
+
+/* Stili per liste e paragrafi */
+ul {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Stili per i link */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Modificabile per aggiungere stili specifici */
+/* Ad esempio, per cambiare il colore del bordo del codice: */
+/* code {
+    border-left-color: #ff0000; 
+} */
+
+/* Puoi aggiungere qui ulteriori classi o ID per stili personalizzati */
