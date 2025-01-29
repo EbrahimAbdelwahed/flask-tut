@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup di un'applicazione Flask</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        code {
+            background-color: #f4f4f4;
+            display: block;
+            padding: 10px;
+            border-left: 3px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Setup di un'applicazione Flask</h1>
+
+    <h2>Passo 1: Installare Flask</h2>
+    <p>Assicurati di avere Python installato. Installa Flask attraverso pip:</p>
+    <code>
+        pip install Flask
+    </code>
+
+    <h2>Passo 2: Creare la struttura del progetto</h2>
+    <p>Crea una nuova directory per il tuo progetto e all'interno organizza le cartelle come segue:</p>
+    <ul>
+        <li><code>app.py</code> - il file principale dell'applicazione</li>
+        <li><code>/templates</code> - per i file HTML</li>
+        <li><code>/static</code> - per CSS, JavaScript, immagini, ecc.</li>
+    </ul>
+    <code>
+        tuo_progetto/
+        ├── app.py
+        ├── templates/
+        │   └── index.html
+        └── static/
+            ├── css/
+            │   └── style.css
+            └── js/
+                └── script.js
+    </code>
+
+    <h2>Passo 3: Scrivere il codice base Flask</h2>
+    <p>Apri <code>app.py</code> e aggiungi il seguente codice:</p>
+    <code>
+        from flask import Flask, render_template
+
+        app = Flask(__name__)
+
+        @app.route('/')
+        def home():
+            return render_template('index.html')
+
+        if __name__ == '__main__':
+            app.run(debug=True)
+    </code>
+    <p>Questo codice configura Flask per usare i template dalla cartella <code>templates</code>.</p>
+
+    <h2>Passo 4: Creare un template</h2>
+    <p>Nella cartella <code>templates</code>, crea un file chiamato <code>index.html</code> con questo contenuto:</p>
+    <code>
+        <!-- templates/index.html -->
+        <!DOCTYPE html>
+        <html lang="it">
+        <head>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        </head>
+        <body>
+            <h1>Benvenuti alla mia applicazione Flask!</h1>
+            <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        </body>
+        </html>
+    </code>
+
+    <h2>Passo 5: Aggiungere file statici</h2>
+    <p>Dentro la cartella <code>static</code>, crea due sottocartelle <code>css</code> e <code>js</code>. Aggiungi un file <code>style.css</code> e <code>script.js</code> con contenuti di esempio:</p>
+    <code>
+        /* static/css/style.css */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </code>
+    <code>
+        // static/js/script.js
+        console.log('Script caricato!');
+    </code>
+
+    <h2>Passo 6: Avviare l'applicazione</h2>
+    <p>Usa il terminale per navigare nella directory del tuo progetto e avvia l'applicazione con:</p>
+    <code>
+        python app.py
+    </code>
+    <p>Visita <code>127.0.0.1:5000</code> nel tuo browser per vedere la tua applicazione in azione.</p>
+
+    <h2>Conclusione</h2>
+    <p>Con questa struttura, hai un ambiente Flask configurato per separare logicamente il codice dell'applicazione, i template HTML e i file statici. Questo rende il tuo progetto più organizzato e scalabile.</p>
+</body>
+</html>
