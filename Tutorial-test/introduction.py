@@ -134,24 +134,28 @@ console1 = [
 
 content = [
 
-	text1,
-	[["$ mkdir nome_del_tuo_progetto"]],
-	text2,
-	[["$ cd nome_del_tuo_progetto"]],
-	text3,
-	[["$ python3 -m venv .venv"]],
-	text4,
-	[["$ nome_del_tuo_progetto\Scripts\\activate"]],
-	text5,
-	text6,
-	[["$ pip install Flask"]],
-	text7,
-	text8,
-	console1,
-	text9,
-	[["$ python app.py"]],
-	text10,
-	text11
+	content = [
+    text1,
+    [["$ mkdir nome_del_tuo_progetto"]],
+    text2,
+    [["$ cd nome_del_tuo_progetto"]],
+    text3,
+    [["$ python3 -m venv .venv"]],
+    text4,
+    [["$ nome_del_tuo_progetto\Scripts\\activate"]],
+    text5,
+    text6,
+    ["from flask import Flask\napp = Flask(__name__)"],
+    text7,
+    ["@app.route('/')\ndef hello():\n    return 'Hello, World!'"],
+    text8,
+    ["if __name__ == '__main__':\n    app.run(debug=True)"],
+    text9,
+    [["$ python app.py"]],
+    text10,
+    text11
+]
+
 
  
 ]
