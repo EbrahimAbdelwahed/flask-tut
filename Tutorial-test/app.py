@@ -1,8 +1,16 @@
 from flask import Flask, render_template, session, redirect, url_for
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
 import introduction, database, auth, pages, blog, homepage
 
 app = Flask(__name__)
 app.secret_key = "plmoknij"
+
+def pygmentize(code, lexer=PythonLexer(), formatter=HtmlFormatter()):
+    return highlight(code, lexer, formatter)
+
+app.jinja_env.filters['pygmentize'] = pygmentize
 
 tutorial_sections = [
 	{ 'id': 'Introduction', 'title': 'Introduzione', 'content': introduction.content },
