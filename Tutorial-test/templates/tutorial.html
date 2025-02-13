@@ -35,29 +35,19 @@
 
             <div class="tutorial-text">
                 {% for item in section.content %}
-                    {% if item is string %}
-                        <p>{{ item }}</p>
-                    {% elif item is iterable and item is not mapping %}
-                        <div class="console">
-                            <p class="code">
-                                {% for line in item %}
-                                    {% for token in line %}
-                                        {% if token is string and token == "" %}
-                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                        {% elif token is string %}
-                                            <span>{{ token }}</span>
-                                        {% else %}
-                                            <span class="{{ token[0] }}">{{ token[1] }}</span>
-                                        {% endif %}
-                                    {% endfor %}
-                                    <br/>
-                                {% endfor %}
-                            </p>
-                        </div>
-                    {% else %}
-                        <img src="{{ url_for('static', filename=item['src']) }}"/>
-                    {% endif %}
-                {% endfor %}
+    				{% if item is string %}
+            			<p>{{ item }}</p>
+    				{% elif item is iterable and item is not mapping %}
+        			<div class="console">
+            			 <p class="code">
+                			{{ item | pygmentize | safe }}
+            			 </p>
+        	</div>
+    		 {% else %}
+        		<img src="{{ url_for('static', filename=item['src']) }}"/>
+    		{% endif %}
+			{% endfor %}
+
             </div>  
         </div>
     </div>
